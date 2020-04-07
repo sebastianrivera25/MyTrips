@@ -11,6 +11,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using MyTrips.Web.Data;
+using MyTrips.Web.Helpers;
 
 namespace MyTrips.Web
 {
@@ -39,6 +40,7 @@ namespace MyTrips.Web
             });
 
 
+           // services.AddScoped<IUserHelper, UserHelper>();
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
         }
 

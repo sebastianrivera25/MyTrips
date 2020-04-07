@@ -1,10 +1,12 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using MyTrips.Common.Enums;
+using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace MyTrips.Web.Data.Entities
 {
-    public class UserEntities : IdentityUser
+    public class UserEntity : IdentityUser
     {
        
         [Display(Name = "Document")]
@@ -36,6 +38,8 @@ namespace MyTrips.Web.Data.Entities
 
         [Display(Name = "User")]
         public string FullNameWithDocument => $"{FirstName} {LastName} - {Document}";
+
+        public ICollection<TripEntity> Trips { get; set; }
     }
 }
 

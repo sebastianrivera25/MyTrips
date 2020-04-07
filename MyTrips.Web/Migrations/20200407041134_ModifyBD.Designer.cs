@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MyTrips.Web.Data;
 
 namespace MyTrips.Web.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20200407041134_ModifyBD")]
+    partial class ModifyBD
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -129,88 +131,6 @@ namespace MyTrips.Web.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("MyTrips.Web.Data.Entities.CityEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Cities");
-                });
-
-            modelBuilder.Entity("MyTrips.Web.Data.Entities.ExpenseEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int>("Amount");
-
-                    b.Property<int?>("ExpenseTypeId");
-
-                    b.Property<string>("PicturePath");
-
-                    b.Property<DateTime>("StartDate");
-
-                    b.Property<int?>("TripId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ExpenseTypeId");
-
-                    b.HasIndex("TripId");
-
-                    b.ToTable("Expenses");
-                });
-
-            modelBuilder.Entity("MyTrips.Web.Data.Entities.ExpenseTypeEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ExpenseTypes");
-                });
-
-            modelBuilder.Entity("MyTrips.Web.Data.Entities.TripEntity", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<int?>("CityId");
-
-                    b.Property<DateTime>("EndDate");
-
-                    b.Property<string>("Name")
-                        .IsRequired()
-                        .HasMaxLength(100);
-
-                    b.Property<DateTime>("StartDate");
-
-                    b.Property<string>("UserId");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("CityId");
-
-                    b.HasIndex("UserId");
-
-                    b.ToTable("Trips");
-                });
-
             modelBuilder.Entity("MyTrips.Web.Data.Entities.UserEntity", b =>
                 {
                     b.Property<string>("Id")
@@ -324,28 +244,6 @@ namespace MyTrips.Web.Migrations
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("MyTrips.Web.Data.Entities.ExpenseEntity", b =>
-                {
-                    b.HasOne("MyTrips.Web.Data.Entities.ExpenseTypeEntity", "ExpenseType")
-                        .WithMany("Expenses")
-                        .HasForeignKey("ExpenseTypeId");
-
-                    b.HasOne("MyTrips.Web.Data.Entities.TripEntity", "Trip")
-                        .WithMany("Expenses")
-                        .HasForeignKey("TripId");
-                });
-
-            modelBuilder.Entity("MyTrips.Web.Data.Entities.TripEntity", b =>
-                {
-                    b.HasOne("MyTrips.Web.Data.Entities.CityEntity", "City")
-                        .WithMany("Trips")
-                        .HasForeignKey("CityId");
-
-                    b.HasOne("MyTrips.Web.Data.Entities.UserEntity", "User")
-                        .WithMany("Trips")
-                        .HasForeignKey("UserId");
                 });
 #pragma warning restore 612, 618
         }
