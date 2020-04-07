@@ -13,8 +13,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTrips.Prism.Android", "My
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTrips.Prism.iOS", "MyTrips.Prism\MyTrips.Prism.iOS\MyTrips.Prism.iOS.csproj", "{339AFAD9-B789-4C44-8121-4D08E2355789}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyTrips.Cross.Android", "MyTrips.Cross.Android\MyTrips.Cross.Android.csproj", "{477B2803-F7CA-41F4-BD69-3877B2B51230}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Ad-Hoc|Any CPU = Ad-Hoc|Any CPU
@@ -159,42 +157,6 @@ Global
 		{339AFAD9-B789-4C44-8121-4D08E2355789}.Release|iPhone.Build.0 = Release|iPhone
 		{339AFAD9-B789-4C44-8121-4D08E2355789}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
 		{339AFAD9-B789-4C44-8121-4D08E2355789}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Ad-Hoc|Any CPU.ActiveCfg = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Ad-Hoc|Any CPU.Build.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Ad-Hoc|Any CPU.Deploy.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Ad-Hoc|iPhone.ActiveCfg = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Ad-Hoc|iPhone.Build.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Ad-Hoc|iPhone.Deploy.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Ad-Hoc|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Ad-Hoc|iPhoneSimulator.Build.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Ad-Hoc|iPhoneSimulator.Deploy.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.AppStore|Any CPU.ActiveCfg = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.AppStore|Any CPU.Build.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.AppStore|Any CPU.Deploy.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.AppStore|iPhone.ActiveCfg = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.AppStore|iPhone.Build.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.AppStore|iPhone.Deploy.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.AppStore|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.AppStore|iPhoneSimulator.Build.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.AppStore|iPhoneSimulator.Deploy.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Debug|iPhone.Deploy.0 = Debug|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Debug|iPhoneSimulator.Deploy.0 = Debug|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Release|Any CPU.Build.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Release|Any CPU.Deploy.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Release|iPhone.Build.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Release|iPhone.Deploy.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{477B2803-F7CA-41F4-BD69-3877B2B51230}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
