@@ -14,5 +14,14 @@ namespace MyTrips.Web.Data
         public DbSet<ExpenseEntity> Expenses { get; set; }
         public DbSet<ExpenseTypeEntity> ExpenseTypes { get; set; }
         public DbSet<TripEntity> Trips { get; set; }
+
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+
+            builder.Entity<ExpenseTypeEntity>()
+                .HasIndex(t => t.Name)
+                .IsUnique();
+        }
     }
 }

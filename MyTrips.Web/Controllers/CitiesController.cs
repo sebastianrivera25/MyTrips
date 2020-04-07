@@ -7,18 +7,18 @@ using System.Threading.Tasks;
 
 namespace MyTrips.Web.Controllers
 {
-    public class ExpenseTypesController : Controller
+    public class CitiesController : Controller
     {
         private readonly DataContext _context;
 
-        public ExpenseTypesController(DataContext context)
+        public CitiesController(DataContext context)
         {
             _context = context;
         }
 
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ExpenseTypes.ToListAsync());
+            return View(await _context.Cities.ToListAsync());
         }
 
         public async Task<IActionResult> Details(int? id)
@@ -28,30 +28,29 @@ namespace MyTrips.Web.Controllers
                 return NotFound();
             }
 
-            ExpenseTypeEntity expenseTypeEntity = await _context.ExpenseTypes
+            CityEntity cityEntity = await _context.Cities
                 .FirstOrDefaultAsync(m => m.Id == id);
-            if (expenseTypeEntity == null)
+            if (cityEntity == null)
             {
                 return NotFound();
             }
 
-            return View(expenseTypeEntity);
+            return View(cityEntity);
         }
 
-        [HttpGet]
+        // GET: Cities/Create
         public IActionResult Create()
         {
             return View();
         }
 
-
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(ExpenseTypeEntity expenseTypeEntity)
+        public async Task<IActionResult> Create(CityEntity cityEntity)
         {
             if (ModelState.IsValid)
             {
-                _context.Add(expenseTypeEntity);
+                _context.Add(cityEntity);
                 try
                 {
                     await _context.SaveChangesAsync();
@@ -61,7 +60,7 @@ namespace MyTrips.Web.Controllers
                 {
                     if (ex.InnerException.Message.Contains("duplicate"))
                     {
-                        ModelState.AddModelError(string.Empty, $"Already exists  type: {expenseTypeEntity.Name}.");
+                        ModelState.AddModelError(string.Empty, $"Already exists: {cityEntity.Name}.");
                     }
                     else
                     {
@@ -70,10 +69,10 @@ namespace MyTrips.Web.Controllers
 
                 }
             }
-            return View(expenseTypeEntity);
+            return View(cityEntity);
         }
 
-        // GET: ExpenseTypes/Edit/5
+        // GET: Cities/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
             if (id == null)
@@ -81,26 +80,29 @@ namespace MyTrips.Web.Controllers
                 return NotFound();
             }
 
-            ExpenseTypeEntity expenseTypeEntity = await _context.ExpenseTypes.FindAsync(id);
-            if (expenseTypeEntity == null)
+            CityEntity cityEntity = await _context.Cities.FindAsync(id);
+            if (cityEntity == null)
             {
                 return NotFound();
             }
-            return View(expenseTypeEntity);
+            return View(cityEntity);
         }
 
+        // POST: Cities/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, ExpenseTypeEntity expenseTypeEntity)
+        public async Task<IActionResult> Edit(int id, CityEntity cityEntity)
         {
-            if (id != expenseTypeEntity.Id)
+            if (id != cityEntity.Id)
             {
                 return NotFound();
             }
 
             if (ModelState.IsValid)
             {
-                _context.Update(expenseTypeEntity);
+                _context.Update(cityEntity);
                 try
                 {
                     await _context.SaveChangesAsync();
@@ -110,7 +112,7 @@ namespace MyTrips.Web.Controllers
                 {
                     if (ex.InnerException.Message.Contains("duplicate"))
                     {
-                        ModelState.AddModelError(string.Empty, $"Already exists  type: {expenseTypeEntity.Name}.");
+                        ModelState.AddModelError(string.Empty, $"Already exists  type: {cityEntity.Name}.");
                     }
                     else
                     {
@@ -119,10 +121,11 @@ namespace MyTrips.Web.Controllers
 
                 }
             }
-            return View(expenseTypeEntity);
+            return View(cityEntity);
         }
 
-        // GET: ExpenseTypes/Delete/5
+
+        // GET: Cities/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
             if (id == null)
@@ -130,17 +133,17 @@ namespace MyTrips.Web.Controllers
                 return NotFound();
             }
 
-            ExpenseTypeEntity expenseTypeEntity = await _context.ExpenseTypes
-                .FirstOrDefaultAsync(m => m.Id == id);
-            if (expenseTypeEntity == null)
+            CityEntity cityEntity = await _context.Cities
+            .FirstOrDefaultAsync(m => m.Id == id);
+            if (cityEntity == null)
             {
                 return NotFound();
             }
-            _context.ExpenseTypes.Remove(expenseTypeEntity);
+
+            _context.Cities.Remove(cityEntity);
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
 
     }
 }
-
